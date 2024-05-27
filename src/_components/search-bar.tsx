@@ -1,4 +1,5 @@
 import { BiSearch } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 interface SearchBarProps {
   searchTerm: string;
@@ -10,7 +11,7 @@ export default function SearchBar({
   setSearchTerm,
 }: SearchBarProps) {
   return (
-    <section className="flex flex-col md:flex-row gap-5 mt-10">
+    <section className="flex flex-col md:flex-row gap-5 mt-10 items-center">
       <div className="md:w-2/3 flex justify-end items-center relative">
         <BiSearch size={25} className="absolute mr-2 w-10 text-gray-400" />
         <input
@@ -20,9 +21,9 @@ export default function SearchBar({
           className="border border-gray-300 rounded-lg p-4 w-full"
         />
       </div>
-      <button className="md:w-1/3 py-3 border border-blue-700 rounded-lg text-blue-700">
+      <Link to={"/cadastro"} className="md:w-1/3 py-4 text-center border border-blue-700 rounded-lg text-blue-700">
         Adicionar endereço
-      </button>
+      </Link>
     </section>
   );
 }

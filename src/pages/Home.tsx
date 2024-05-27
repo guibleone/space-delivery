@@ -1,5 +1,5 @@
-import AddressList from "./_components/address-list";
-import Navbar from "./_components/navbar";
+import AddressList from "../_components/address-list";
+import Navbar from "../_components/navbar";
 
 export default function Home() {
   return (
