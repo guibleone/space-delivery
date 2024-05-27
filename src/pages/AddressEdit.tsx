@@ -1,10 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../_components/navbar";
 
 export default function AddressEdit() {
+  const [planet, setPlanet] = useState("Terra");
+
+  const handlePlanetChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setPlanet(event.target.value);
+  };
+
   return (
     <main className="w-full px-8 py-8 flex flex-col min-h-screen lg:mx-auto lg:max-w-screen-xl">
-      <Navbar title={"Editar endereço"} />
+      <Navbar button title={"Editar endereço"} />
       <div className="flex flex-col mt-14 gap-3">
         <h1 className="text-lg font-medium">Etiqueta</h1>
         <select className="border border-gray-300 rounded-lg p-4 w-full">
@@ -13,6 +20,12 @@ export default function AddressEdit() {
           </option>
           <option className="border bg-gray-300 rounded-lg p-4 w-full">
             Casa
+          </option>
+          <option className="border bg-gray-300 rounded-lg p-4 w-full">
+            Fábrica
+          </option>
+          <option className="border bg-gray-300 rounded-lg p-4 w-full">
+            Armazém
           </option>
         </select>
       </div>
@@ -41,17 +54,50 @@ export default function AddressEdit() {
           />
         </div>
       </div>
-      <div className="flex flex-col mt-14 gap-3 w-full">
-        <h1 className="text-lg font-medium">Endereço *</h1>
-        <input
-          type="text"
-          className="border  border-gray-300 rounded-lg p-4 "
-        />
-      </div>
+      {planet === "Terra" && (
+        <>
+          <div className="flex flex-col mt-14 gap-3 w-full">
+            <h1 className="text-lg font-medium">Endereço *</h1>
+            <input
+              type="text"
+              className="border  border-gray-300 rounded-lg p-4 "
+            />
+          </div>
+          <div className="flex mt-14 w-full gap-5 ">
+            <div className="flex flex-col gap-3 w-1/2">
+              <h1 className="text-lg font-medium">Cidade *</h1>
+              <input
+                type="text"
+                className="border  border-gray-300 rounded-lg p-4 "
+              />
+            </div>
+            <div className="flex flex-col gap-3 w-1/2">
+              <h1 className="text-lg font-medium">CEP *</h1>
+              <input
+                type="text"
+                className="border  border-gray-300 rounded-lg p-4 "
+              />
+            </div>
+          </div>
+        </>
+      )}
+      {planet === "Marte" && (
+        <div className="flex flex-col mt-14 gap-3 w-full">
+          <h1 className="text-lg font-medium">Lote *</h1>
+          <input
+            type="text"
+            className="border border-gray-300 rounded-lg p-4"
+          />
+        </div>
+      )}
       <div className="flex mt-14 w-full gap-5 ">
         <div className="flex flex-col gap-3 w-1/2">
           <h1 className="text-lg font-medium">Planeta *</h1>
-          <select className="border  border-gray-300 rounded-lg p-4 ">
+          <select
+            className="border  border-gray-300 rounded-lg p-4 "
+            value={planet}
+            onChange={handlePlanetChange}
+          >
             <option className="border bg-gray-300 rounded-lg p-4 w-full">
               Terra
             </option>
@@ -60,36 +106,20 @@ export default function AddressEdit() {
             </option>
           </select>
         </div>
-        <div className="flex flex-col gap-3 w-1/2">
-          <h1 className="text-lg font-medium">Província *</h1>
-          <select className="border  border-gray-300 rounded-lg p-4 ">
-            <option className="border bg-gray-300 rounded-lg p-4 w-full">
-              São Paulo
-            </option>
-            <option className="border bg-gray-300 rounded-lg p-4 w-full">
-              Garzupalop
-            </option>
-          </select>
-        </div>
+        {planet === "Terra" && (
+          <div className="flex flex-col gap-3 w-1/2">
+            <h1 className="text-lg font-medium">Província *</h1>
+            <select className="border border-gray-300 rounded-lg p-4">
+              <option className="border bg-gray-300 rounded-lg p-4 w-full">
+                São Paulo
+              </option>
+              <option className="border bg-gray-300 rounded-lg p-4 w-full">
+                Garzupalop
+              </option>
+            </select>
+          </div>
+        )}
       </div>
-
-      <div className="flex mt-14 w-full gap-5 ">
-        <div className="flex flex-col gap-3 w-1/2">
-          <h1 className="text-lg font-medium">Cidade *</h1>
-          <input
-            type="text"
-            className="border  border-gray-300 rounded-lg p-4 "
-          />
-        </div>
-        <div className="flex flex-col gap-3 w-1/2">
-          <h1 className="text-lg font-medium">CEP *</h1>
-          <input
-            type="text"
-            className="border  border-gray-300 rounded-lg p-4 "
-          />
-        </div>
-      </div>
-
       <section className="flex justify-center md:justify-end mt-14 gap-5">
         <Link
           to={"/"}

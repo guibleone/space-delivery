@@ -34,6 +34,36 @@ export const data = [
     phone: "+55 31 91234-5678",
     propretary: "Carlos Pereira",
     address: "Praça da Liberdade, 789, Belo Horizonte, MG",
+    planet: "Terra",
+  },
+  {
+    id: 4,
+    thumbnail:
+      "https://www.vaisala.com/sites/default/files/styles/16_9_liftup_extra_large/public/images/LIFT-Mars_3D-illustration_1600x900.jpg?itok=iAJOaL3A",
+    type: "Fábrica",
+    phone: "+78 1011 1234",
+    propretary: "Xandar Quor",
+    address: "Lote 1024",
+    planet: "Marte",
+  },
+  {
+    id: 5,
+    thumbnail:
+      "https://static.lpnt.fr/images/2020/01/10/19931967lpw-19931997-article-mars-astronomie-jpg_6825794_1250x625.jpg",
+    type: "Armazém",
+    phone: "+78 2022 2345",
+    propretary: "Zara Vex",
+    address: "Lote 2048",
+    planet: "Marte",
+  },
+  {
+    id: 6,
+    thumbnail:
+      "https://media2.ledevoir.com/images_galerie/nwd_1449110_1112344/image.jpg",
+    type: "Fábrica",
+    phone: "+78 3033 3456",
+    propretary: "Thane Jor",
+    address: "Lote 4096",
     planet: "Marte",
   },
 ];
