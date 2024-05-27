@@ -7,10 +7,10 @@ export default function Home() {
       <Navbar title={"Space Delivery"} />
       <AddressList />
       <section className="flex justify-center md:justify-end mt-14 gap-5">
-        <button className="px-6 py-4 font-bold shadow-lg border rounded-xl">
+        <button className=" py-3 px-4 ext-sm font-bold shadow-lg border rounded">
           Cancelar
         </button>
-        <button className="px-6 py-4 font-bold bg-blue-600 border text-white rounded-xl">
+        <button className="py-3 px-4 text-sm font-bold bg-blue-600 border text-white rounded">
           Salvar mudanças
         </button>
       </section>

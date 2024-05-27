@@ -11,21 +11,19 @@ export default function AddressRegister() {
 
   return (
     <main className="w-full px-8 py-8 flex flex-col min-h-screen lg:mx-auto lg:max-w-screen-xl">
-      <Navbar button title={"Cadastrar endereço"} />
+      <Navbar button title={"Cadastro"} />
       <div className="flex flex-col mt-14 gap-3">
-        <h1 className="text-lg font-medium">Etiqueta</h1>
-        <select className="border border-gray-300 rounded-lg p-4 w-full">
-          <option className="border bg-gray-300 rounded-lg p-4 w-full">
-            Apartamento
+        <h1 className="text-lg font-medium">Planeta *</h1>
+        <select
+          className="border border-gray-300 rounded-lg p-2 md:py-4"
+          value={planet}
+          onChange={handlePlanetChange}
+        >
+          <option className="border bg-gray-300 rounded-lg p-2 md:py-4 w-full">
+            Terra
           </option>
-          <option className="border bg-gray-300 rounded-lg p-4 w-full">
-            Casa
-          </option>
-          <option className="border bg-gray-300 rounded-lg p-4 w-full">
-            Fábrica
-          </option>
-          <option className="border bg-gray-300 rounded-lg p-4 w-full">
-            Armazém
+          <option className="border bg-gray-300 rounded-lg p-2 md:py-4 w-full">
+            Marte
           </option>
         </select>
       </div>
@@ -43,14 +41,14 @@ export default function AddressRegister() {
       </div>
       <div className="flex flex-col mt-14 gap-3 w-full">
         <h1 className="text-lg font-medium">Nome completo *</h1>
-        <div className="flex gap-5">
+        <div className="flex flex-col md:flex-row gap-5">
           <input
             type="text"
-            className="border w-1/2 border-gray-300 rounded-lg p-4 "
+            className="border w-full md:w-1/2 border-gray-300 rounded-lg p-2 md:py-4"
           />
           <input
             type="text"
-            className="border w-1/2 border-gray-300 rounded-lg p-4 "
+            className="border w-full md:w-1/2 border-gray-300 rounded-lg p-2 md:py-4"
           />
         </div>
       </div>
@@ -60,22 +58,22 @@ export default function AddressRegister() {
             <h1 className="text-lg font-medium">Endereço *</h1>
             <input
               type="text"
-              className="border border-gray-300 rounded-lg p-4 "
+              className="border border-gray-300 rounded-lg p-2 md:py-4"
             />
           </div>
-          <div className="flex mt-14 w-full gap-5">
-            <div className="flex flex-col gap-3 w-1/2">
+          <div className="flex flex-col md:flex-row mt-14 gap-5 w-full">
+            <div className="flex flex-col gap-3 w-full md:w-1/2">
               <h1 className="text-lg font-medium">Cidade *</h1>
               <input
                 type="text"
-                className="border border-gray-300 rounded-lg p-4 "
+                className="border border-gray-300 rounded-lg p-2 md:py-4"
               />
             </div>
-            <div className="flex flex-col gap-3 w-1/2">
+            <div className="flex flex-col gap-3 w-full md:w-1/2">
               <h1 className="text-lg font-medium">CEP *</h1>
               <input
                 type="text"
-                className="border border-gray-300 rounded-lg p-4 "
+                className="border border-gray-300 rounded-lg p-2 md:py-4"
               />
             </div>
           </div>
@@ -86,41 +84,43 @@ export default function AddressRegister() {
           <h1 className="text-lg font-medium">Lote *</h1>
           <input
             type="text"
-            className="border border-gray-300 rounded-lg p-4"
+            className="border border-gray-300 rounded-lg p-2 md:py-4"
           />
         </div>
       )}
-      <div className="flex mt-14 w-full gap-5">
-        <div className="flex flex-col gap-3 w-1/2">
-          <h1 className="text-lg font-medium">Planeta *</h1>
-          <select
-            className="border border-gray-300 rounded-lg p-4"
-            value={planet}
-            onChange={handlePlanetChange}
-          >
-            <option className="border bg-gray-300 rounded-lg p-4 w-full">
-              Terra
+      <div className="flex flex-col md:flex-row mt-14 w-full gap-5">
+        <div className="flex flex-col gap-3 w-full md:w-1/2">
+          <h1 className="text-lg font-medium">Etiqueta</h1>
+          <select className="border border-gray-300 rounded-lg p-2 md:py-4 w-full">
+            <option className="border bg-gray-300 rounded-lg p-2 md:py-4 w-full">
+              Apartamento
             </option>
-            <option className="border bg-gray-300 rounded-lg p-4 w-full">
-              Marte
+            <option className="border bg-gray-300 rounded-lg p-2 md:py-4 w-full">
+              Casa
+            </option>
+            <option className="border bg-gray-300 rounded-lg p-2 md:py-4 w-full">
+              Fábrica
+            </option>
+            <option className="border bg-gray-300 rounded-lg p-2 md:py-4 w-full">
+              Armazém
             </option>
           </select>
         </div>
         {planet === "Terra" && (
-          <div className="flex flex-col gap-3 w-1/2">
+          <div className="flex flex-col gap-3 w-full md:w-1/2">
             <h1 className="text-lg font-medium">Província *</h1>
-            <select className="border border-gray-300 rounded-lg p-4">
-              <option className="border bg-gray-300 rounded-lg p-4 w-full">
+            <select className="border border-gray-300 rounded-lg p-2 md:py-4">
+              <option className="border bg-gray-300 rounded-lg p-2 md:py-4 w-full">
                 São Paulo
               </option>
-              <option className="border bg-gray-300 rounded-lg p-4 w-full">
+              <option className="border bg-gray-300 rounded-lg p-2 md:py-4 w-full">
                 Garzupalop
               </option>
             </select>
           </div>
         )}
       </div>
-      <section className="flex justify-center md:justify-end mt-14 gap-5">
+      <section className="flex items-center justify-center md:justify-end mt-14 gap-5">
         <Link
           to={"/"}
           className="px-6 py-4 font-bold shadow-lg border rounded-xl"
@@ -129,7 +129,7 @@ export default function AddressRegister() {
         </Link>
         <Link
           to={"/"}
-          className="px-6 py-4 font-bold bg-blue-600 border text-white rounded-xl"
+          className="py-3 px-4 text-sm font-bold bg-blue-600 border text-white rounded"
         >
           Salvar mudanças
         </Link>

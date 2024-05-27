@@ -1,7 +1,5 @@
 import { cn, getColor } from "../utils";
-import {
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface AddressCardProps {
   thumbnail: string;
@@ -38,8 +36,8 @@ export default function AddressCard({
           src={thumbnail}
           alt={`${type} thumbnail`}
         />
-        <div className="flex flex-col gap-3 w-3/4">
-          <div className="flex justify-between w-full">
+        <div className="flex flex-col gap-3 w-full md:w-3/4">
+          <div className="flex justify-between items-center w-full">
             <div
               className={cn(
                 "w-fit px-3 py-1 rounded-lg font-medium text-sm",
@@ -49,25 +47,26 @@ export default function AddressCard({
               {type}
             </div>
             <input
-              className="h-5 w-5 text-blue-500 "
+              className="h-5 w-5 text-blue-500"
               type="checkbox"
               checked={isChosen}
+              readOnly
             />
           </div>
-          <h1 className="text-2xl font-bold">{propretary}</h1>
-          <h2>{phone}</h2>
-          <p>{address}</p>
-            <div className=" flex gap-3">
-              <Link
-                to={`/editar/${id}`}
-                className="border border-gray-200 text-sm rounded-lg py-3 px-4  font-bold"
-              >
-                Editar endereço
-              </Link>
-              <button className="border border-gray-200 text-sm rounded-lg py-3 px-4  font-bold">
-                Deletar endereço
-              </button>
-            </div>
+          <h1 className="text-xl md:text-2xl font-bold">{propretary}</h1>
+          <h2 className="text-sm md:text-base">{phone}</h2>
+          <p className="text-sm md:text-base">{address}</p>
+          <div className="flex flex-col sm:flex-row gap-3 mt-3">
+            <Link
+              to={`/editar/${id}`}
+              className="border border-gray-200 text-sm rounded-lg py-2 px-3 md:py-3 md:px-4 font-bold text-center"
+            >
+              Editar endereço
+            </Link>
+            <button className="border border-gray-200 text-sm rounded-lg py-2 px-3 md:py-3 md:px-4 font-bold">
+              Deletar endereço
+            </button>
+          </div>
         </div>
       </div>
     </div>
